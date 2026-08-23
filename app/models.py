@@ -29,6 +29,7 @@ class User(Base):
     id: Mapped[int] = mapped_column(primary_key=True, index=True)
     name: Mapped[str]
     email: Mapped[str] = mapped_column(unique=True, index=True)
+    hashed_password: Mapped[str]
     role: Mapped[RoleEnum] = mapped_column(SQLEnum(RoleEnum), default=RoleEnum.CUSTOMER)
 
 class Zone(Base):
