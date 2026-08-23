@@ -1,11 +1,14 @@
 # Last-Mile Delivery Tracker
 
-**Developer:** Vijay Bala K G | **Registration Number:** 23BCE1920 |
+**Developer:** Vijay Bala K G 
+
+**Registration Number:** 23BCE1920
+
 **Institution:** Vellore Institute of Technology, Chennai
+
 **Program:** B.Tech Computer Science 
 
 A comprehensive logistics operations platform featuring complex pricing rules, dynamic agent assignment, and real-time delivery tracking. Built with FastAPI (Backend) and React/Vite (Frontend).
-
 ---
 
 ## 1. System Design Write-Up
