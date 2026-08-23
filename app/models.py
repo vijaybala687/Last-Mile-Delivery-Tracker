@@ -3,7 +3,7 @@ from datetime import datetime
 from typing import List, Optional
 from sqlalchemy import String, Float, ForeignKey, Boolean, DateTime, Enum as SQLEnum, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from database import Base
+from app.database import Base
 
 # Enums for strictly typed statuses and roles
 class RoleEnum(str, enum.Enum):
