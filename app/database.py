@@ -9,7 +9,12 @@ load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://user:password@localhost:5432/delivery_tracker")
 
 # Create the SQLAlchemy engine
-engine = create_engine(DATABASE_URL, echo=False)
+engine = create_engine(
+    DATABASE_URL, 
+    echo=False,
+    pool_pre_ping=True,   # Checks if connection is alive before using it
+    pool_recycle=300      # Recycles connections every 5 minutes
+)
 
 # Session local class for database sessions
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
