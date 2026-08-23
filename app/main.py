@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from app.database import engine, Base
 from app import models
 from app.routers import users, admin, orders, agents, tracking  # Updated imports
+from fastapi.middleware.cors import CORSMiddleware
 
 
 # This command tells SQLAlchemy to create all tables in the database if they don't exist
