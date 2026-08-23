@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from typing import List, Optional
 from app.models import RoleEnum, StatusEnum, OrderTypeEnum
 
+
 # --- User Schemas ---
 class UserCreate(BaseModel):
     name: str
@@ -39,3 +40,24 @@ class RateCardCreate(BaseModel):
     intra_zone_rate: float
     inter_zone_rate: float
     cod_surcharge: float = 0.0
+
+
+# --- Order Schemas ---
+class OrderCreate(BaseModel):
+    pickup_area_id: int
+    drop_area_id: int
+    order_type: OrderTypeEnum
+    actual_weight: float
+    length: float
+    width: float
+    height: float
+    is_cod: bool = False
+
+class OrderResponse(BaseModel):
+    id: int
+    tracking_number: str
+    status: StatusEnum
+    delivery_cost: float
+    
+    class Config:
+        from_attributes = True

@@ -2,7 +2,8 @@ from app.database import Base
 from fastapi import FastAPI
 from app.database import engine, Base
 from app import models
-from app.routers import users
+from app.routers import users, admin, orders, agents, tracking  # Updated imports
+
 
 # This command tells SQLAlchemy to create all tables in the database if they don't exist
 Base.metadata.create_all(bind=engine)
@@ -14,6 +15,10 @@ app = FastAPI(
 )
 
 app.include_router(users.router)
+app.include_router(admin.router)
+app.include_router(orders.router)
+app.include_router(agents.router)
+app.include_router(tracking.router)
 
 @app.get("/")
 def read_root():
